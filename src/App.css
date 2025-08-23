@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: 'Cal_Sans';
+  src: url('./assets/fonts/CalSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat_Italic';
+  src: url('./assets/fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat_Regular';
+  src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
