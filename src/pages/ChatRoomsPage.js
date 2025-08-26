@@ -1,14 +1,14 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
 import HeroIllustration from '../components/HeroIllustration'
-import TranslatorComp from '../components/TranslatorComp'
+import ChatComp from '../components/ChatComp'
 
-const TranslatePage = () => {
+const ChatRoomsPage = () => {
   return (
     <HeroIllustration>
         <NavBar />
         <div style={styles.container}>
-            <TranslatorComp />
+            <ChatComp />
         </div>
     </HeroIllustration>
   )
@@ -22,7 +22,6 @@ const styles = {
         alignItems: 'center',
         height: 'calc(100vh - 80px)',
         width: '100%',
-        
     }};
 
-export default TranslatePage
+export default ChatRoomsPage

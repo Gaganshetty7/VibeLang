@@ -36,7 +36,6 @@ const styles = {
   mainBox: {
     width: '90%',
     maxWidth: '1200px',
-    margin: '40px auto 0 auto',
     background: '#fff',
     borderRadius: '18px',
     boxShadow: '0 2px 8px rgba(0,0,0,0.07)',

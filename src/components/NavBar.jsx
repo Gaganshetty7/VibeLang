@@ -1,12 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
+    const navigate = useNavigate();
     return (
         <nav style={styles.navbar}>
-            <span style={styles.name}>VibeLang</span>
+            <span style={styles.name} onClick={()=>navigate('/')}>VibeLang</span>
             <div style={styles.navButtonsDiv}>
-                <button style={styles.navButtons}>Chat Rooms</button>
-                <button style={styles.navButtons}>Translate</button>
+                <button style={styles.navButtons} onClick={()=>navigate('/chatroomsPage')}>Chat Rooms</button>
+                <button style={styles.navButtons} onClick={()=>navigate('/translatePage')}>Translate</button>
                 <button style={styles.navButtons}>Invite</button>
                 <button style={styles.navButtons}>About Us</button>
             </div>
@@ -42,7 +44,8 @@ const styles = {
     },
     name: {
     fontSize: '35px',
-    fontFamily: "'Cal_Sans', sans-serif"
+    fontFamily: "'Cal_Sans', sans-serif",
+    cursor: 'pointer',
     },
 
     navButtonsDiv:{

@@ -27,7 +27,7 @@ code {
 /* Ensure body and html can scroll */
 html, body {
   overflow-y: auto; /* allows vertical scrolling when needed */
-  overflow-x: hidden; /* prevents horizontal scrollbars */
+  overflow-x: auto; /* prevents horizontal scrollbars */
 }
 
 /* Apply to all scrollable containers */
