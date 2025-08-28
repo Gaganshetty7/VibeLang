@@ -67,12 +67,15 @@ const styles = {
   },
   chatlistheadertext:{
     fontSize: '35px',
-    color: '#fff'
+    color: '#fff',
+    fontFamily: "'Cal_Sans', sans-serif",
+    letterSpacing: '3px',
   },
   chatsearchinput: { 
     padding: '8px', 
     width: '100%', 
     borderRadius: '10px', 
+    fontFamily: "'Montserrat_Regular', sans-serif",
     border: '1px solid #ccc',
     boxSizing: 'border-box'
   },
@@ -96,8 +99,7 @@ const styles = {
     background: '#fff',
     borderRadius: '18px 18px 0 0',
     boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
-    justifyContent: 'space-between',
-    fontFamily: 'Roboto, Arial, sans-serif',
+    justifyContent: 'space-between'
   },
     info: {
     display: 'flex',
@@ -120,13 +122,16 @@ const styles = {
   },
   name: {
     fontSize: 17,
-    fontWeight: 600,
+    fontWeight: 500,
     color: '#222',
     marginBottom: 2,
+    fontFamily: "'Cal_Sans', sans-serif",
+    letterSpacing: '2px',
   },
   lastseeninfo: {
     fontSize: 13,
     color: '#888',
+    fontFamily: "'Montserrat_Regular', sans-serif",
   },
   searchIconImg: {
     width: 22,

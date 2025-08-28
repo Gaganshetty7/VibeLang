@@ -9,7 +9,7 @@ const NavBar = () => {
             <div style={styles.navButtonsDiv}>
                 <button style={styles.navButtons} onClick={()=>navigate('/chatroomsPage')}>Chat Rooms</button>
                 <button style={styles.navButtons} onClick={()=>navigate('/translatePage')}>Translate</button>
-                <button style={styles.navButtons}>Invite</button>
+                <button style={styles.navButtons} onClick={()=>navigate('/invitejoinPage')}>Invite</button>
                 <button style={styles.navButtons}>About Us</button>
             </div>
             <button style={styles.loginButton}>Login</button>

@@ -9,7 +9,7 @@ const HeroSection = () => {
                 <span style={styles.note}>Powered by real-time messaging & Seamless translations.</span>
                 <div style={styles.buttonsDiv}>
                     <button style={styles.btnTrans} onClick={()=>navigate('/translatePage')}>Translate</button>
-                    <button style={styles.btnChat}>Join Chat</button>
+                    <button style={styles.btnChat} onClick={()=>navigate('/invitejoinPage')}>Join Chat</button>
                 </div>
             </div>
             
