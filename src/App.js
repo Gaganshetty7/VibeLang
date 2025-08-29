@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import TranslatePage from './pages/TranslatePage';
 import ChatRoomsPage from './pages/ChatRoomsPage';
 import InviteJoinPage from './pages/InviteJoinPage';
+import LoginSignupPage from './pages/LoginSignupPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/translatePage" element={<TranslatePage />} />
         <Route path="/chatroomsPage" element={<ChatRoomsPage />} />
         <Route path="/invitejoinPage" element={<InviteJoinPage />} />
+        <Route path="/loginsignupPage" element={<LoginSignupPage />} />
       </Routes>
     </Router>
   );

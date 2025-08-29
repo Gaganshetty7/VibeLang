@@ -10,9 +10,9 @@ const NavBar = () => {
                 <button style={styles.navButtons} onClick={()=>navigate('/chatroomsPage')}>Chat Rooms</button>
                 <button style={styles.navButtons} onClick={()=>navigate('/translatePage')}>Translate</button>
                 <button style={styles.navButtons} onClick={()=>navigate('/invitejoinPage')}>Invite</button>
-                <button style={styles.navButtons}>About Us</button>
+                <button style={styles.navButtons} >About Us</button>
             </div>
-            <button style={styles.loginButton}>Login</button>
+            <button style={styles.loginButton}onClick={()=>navigate('/loginsignupPage')}>Login/Signup</button>
         </nav>
     );
 };
@@ -31,8 +31,7 @@ const styles = {
     },
 
     loginButton: {
-        padding: '8px 16px',
-        width: '110px',
+        padding: '8px 10px',
         height: '40px',
         backgroundColor: '#fff',
         borderRadius: '5px',
