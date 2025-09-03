@@ -128,6 +128,15 @@ const ChatComp = () => {
     }
   ];
 
+  const [messageInput, setMessageInput] = useState('');
+
+  const sendMessage = () => {
+    if (!messageInput.trim()) return;
+    // TODO: Add logic to send message and update state/data
+    console.log('Sending message:', messageInput);
+    setMessageInput('');
+  };
+
 
   const [selectChatRoom, setSelectChatRoom] = useState(null);
   const selectedRoom = chatRooms.find(room => room.id === selectChatRoom) || { messages: [] };
@@ -172,30 +181,52 @@ const ChatComp = () => {
 
       </div>
       <div className='chatwindow' style={styles.chatwindow}>
-        <div className='chatwindowheader' style={styles.chatwindowheader}>
-          <div style={styles.info}>
-            <div style={styles.profileCircle}></div>
-            <div style={styles.profiletexts}>
-              <div style={styles.name}>Gagan Shetty</div>
-              <div style={styles.lastseeninfo}>Last seen 08 Aug at 05:07 PM</div>
-            </div>
+        {!selectChatRoom ? (
+          <div style={styles.selectTextPlaceholder}>
+            Please select a chat to start messaging.
           </div>
-          <img src={searchIcon} alt="Search" style={styles.searchIconImg} />
-        </div>
-        <div className='messageswrapper' style={styles.messageswrapper}>
-          {!selectChatRoom ? (
-            <div style={styles.selectTextPlaceholder}>
-              Please select a chat to start messaging.
+        ) : (
+          <>
+            <div className='chatwindowheader' style={styles.chatwindowheader}>
+              <div style={styles.info}>
+                <div style={styles.profileCircle}></div>
+                <div style={styles.profiletexts}>
+                  <div style={styles.name}>{selectedRoom?.name}</div>
+                  <div style={styles.lastseeninfo}>{selectedRoom?.lastTime}</div>
+                </div>
+              </div>
+              <img src={searchIcon} alt="Search" style={styles.searchIconImg} />
             </div>
-          ) : (
-            <div style={styles.messagesContainer}>
-              {selectedRoom?.messages?.map((msg) => (
-                <ChatBubble key={msg.id} message={msg} isSender={msg.isSender} />
-              ))}
+            <div className='messageswrapper' style={styles.messageswrapper}>
+              <div style={styles.messagesContainer}>
+                {selectedRoom?.messages?.map((msg) => (
+                  <ChatBubble key={msg.id} message={msg} isSender={msg.isSender} />
+                ))}
+              </div>
+              <div style={styles.messageInputContainer}>
+                {/* <button style={styles.emojiButton} aria-label="Add emoji">
+                  😊
+                </button> */}
+                <input
+                  type="text"
+                  placeholder="Type a message"
+                  value={messageInput}
+                  onChange={(e) => setMessageInput(e.target.value)}
+                  style={styles.messageInput}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') sendMessage();
+                  }}
+                />
+                <button style={styles.sendButton} onClick={sendMessage} aria-label="Send message">
+                  ➤
+                </button>
+              </div>
+
             </div>
-          )}
-        </div>
+          </>
+        )}
       </div>
+
     </div>
   );
 };
@@ -252,6 +283,7 @@ const styles = {
   },
   chatRoomItem: {
     display: 'flex',
+    height: '45px',
     flexDirection: 'row',
     alignItems: 'center',
     padding: '12px 16px',
@@ -308,6 +340,7 @@ const styles = {
     backgroundColor: 'white',
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'center',
   },
   chatwindowheader: {
     display: 'flex',
@@ -362,7 +395,6 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     backgroundColor: '#F6F4F5', // Light gray
-    padding: '10px',
     overflowY: 'auto',
   },
   selectTextPlaceholder: {
@@ -378,7 +410,45 @@ const styles = {
     overflowY: 'auto',
     backgroundColor: '#F6F4F5',
     gap: '10px',
-  }
+  },
+  messageInputContainer: {
+  display: 'flex',
+  alignItems: 'center',
+  padding: '10px 10px',
+  borderTop: '1px solid #ddd',
+  backgroundColor: '#fff',
+  borderRadius: '0 0 18px 18px',
+  gap: '10px',
+},
+emojiButton: {
+  background: 'transparent',
+  border: 'none',
+  fontSize: '24px',
+  cursor: 'pointer',
+},
+messageInput: {
+  flex: 1,
+  borderRadius: '20px',
+  border: '1px solid #ccc',
+  padding: '10px 15px',
+  fontSize: '16px',
+  fontFamily: "'Montserrat_Regular', sans-serif",
+  outline: 'none',
+},
+sendButton: {
+  background: '#4e8cff',
+  border: 'none',
+  borderRadius: '50%',
+  color: '#fff',
+  fontSize: '20px',
+  width: '36px',
+  height: '36px',
+  cursor: 'pointer',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+},
+
 
 };
 
